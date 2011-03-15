@@ -4,7 +4,7 @@ describe Admin::SnippetsController do
   dataset :users, :snippets
   
   before :each do
-    login_as :developer
+    login_as :admin
   end
 
   describe "editing a snippet" do

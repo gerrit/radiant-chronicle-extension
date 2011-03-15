@@ -4,7 +4,7 @@ describe Admin::LayoutsController do
   dataset :users, :layouts
   
   before :each do
-    login_as :developer
+    login_as :admin
   end
 
   describe "editing a layout" do

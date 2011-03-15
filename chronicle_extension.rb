@@ -8,12 +8,6 @@ class ChronicleExtension < Radiant::Extension
 
   ::MAX_VERSIONS_VISIBLE_IN_TIMELINE = 14
 
-  define_routes do |map|
-    map.namespace :admin, :member => { :remove => :get } do |admin|
-      admin.resources :versions, :member => { :diff => :get, :summary => :get }
-    end
-  end
-
   def activate
     require 'chronicle/diff'
     ActiveRecord::Base::VersionsProxyMethods.class_eval { include Chronicle::VersionsProxyMethods }
